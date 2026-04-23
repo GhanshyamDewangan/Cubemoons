@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Welly Belly × Agency — Digital Growth Proposal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --cream: #F7F3EE;
+    --warm-white: #FDFAF6;
+    --sage: #6B8C6B;
+    --sage-light: #8FAE8F;
+    --sage-dark: #3D5C3D;
+    --moss: #4A6741;
+    --beige: #E8DDD0;
+    --tan: #C9B99A;
+    --brown: #7A5C42;
+    --charcoal: #2A2A2A;
+    --mid: #5C5C5C;
+    --light-text: #9A9280;
+    --border: rgba(107,140,107,0.15);
+    --shadow: 0 8px 40px rgba(42,42,42,0.08);
+    --shadow-lg: 0 24px 80px rgba(42,42,42,0.12);
+    --radius: 16px;
+    --radius-sm: 8px;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background: var(--warm-white);
+    color: var(--charcoal);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+  /* ─── NAV ─── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 20px 60px;
+    background: rgba(253,250,246,0.85);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-logo {
+    font-family: 'Outfit', sans-serif;
+    font-size: 22px; font-weight: 700; letter-spacing: -0.5px;
+    color: var(--sage-dark);
+  }
+  .nav-logo span { color: var(--tan); }
+  .nav-links { display: flex; gap: 36px; }
+  .nav-links a {
+    font-size: 13px; font-weight: 500; letter-spacing: 0.5px;
+    text-decoration: none; color: var(--mid); text-transform: uppercase;
+    transition: color .25s;
+  }
+  .nav-links a:hover { color: var(--sage-dark); }
+  /* ─── HERO ─── */
+  .hero {
+    min-height: 100vh;
+    display: grid; place-items: center;
+    padding: 140px 60px 80px;
+    background:
+      radial-gradient(ellipse 80% 60% at 70% 40%, rgba(107,140,107,0.08) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 40% at 20% 80%, rgba(201,185,154,0.12) 0%, transparent 60%),
+      var(--warm-white);
+    position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image:
+      radial-gradient(circle at 1px 1px, rgba(107,140,107,0.06) 1px, transparent 0);
+    background-size: 32px 32px;
+    pointer-events: none;
+  }
+  .hero-inner {
+    max-width: 960px; text-align: center;
+    position: relative; z-index: 1;
+  }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 8px 20px;
+    background: rgba(107,140,107,0.1);
+    border: 1px solid rgba(107,140,107,0.25);
+    border-radius: 100px;
+    font-size: 12px; font-weight: 600; letter-spacing: 1px;
+    color: var(--sage-dark); text-transform: uppercase;
+    margin-bottom: 32px;
+    animation: fadeUp 0.8s ease both;
+  }
+  .hero-badge svg { width: 14px; height: 14px; }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(40px, 6vw, 78px);
+    font-weight: 700; line-height: 1.1;
+    letter-spacing: -2px; color: var(--charcoal);
+    margin-bottom: 28px;
+    animation: fadeUp 0.8s 0.1s ease both;
+  }
+  .hero h1 em { font-style: normal; color: var(--sage); }
+  .hero-sub {
+    font-size: 20px; font-weight: 300; color: var(--mid); line-height: 1.6;
+    max-width: 560px; margin: 0 auto 48px;
+    animation: fadeUp 0.8s 0.2s ease both;
+  }
+  .hero-ctas {
+    display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;
+    animation: fadeUp 0.8s 0.3s ease both;
+  }
+  .btn-primary {
+    padding: 16px 36px; border-radius: 100px;
+    background: var(--sage-dark); color: #fff;
+    font-size: 15px; font-weight: 600; letter-spacing: 0.3px;
+    text-decoration: none; border: none; cursor: pointer;
+    transition: transform .25s, box-shadow .25s, background .25s;
+    display: inline-flex; align-items: center; gap: 10px;
+  }
+  .btn-primary:hover {
+    background: var(--moss); transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(61,92,61,0.3);
+  }
+  .btn-outline {
+    padding: 16px 36px; border-radius: 100px;
+    background: transparent; color: var(--sage-dark);
+    font-size: 15px; font-weight: 600; letter-spacing: 0.3px;
+    text-decoration: none; border: 2px solid rgba(107,140,107,0.4); cursor: pointer;
+    transition: transform .25s, box-shadow .25s, border-color .25s, background .25s;
+    display: inline-flex; align-items: center; gap: 10px;
+  }
+  .btn-outline:hover {
+    border-color: var(--sage-dark); background: rgba(107,140,107,0.06);
+    transform: translateY(-2px); box-shadow: 0 8px 24px rgba(107,140,107,0.15);
+  }
+  .hero-scroll {
+    position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%);
+    display: flex; flex-direction: column; align-items: center; gap: 8px;
+    color: var(--light-text); font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
+    animation: fadeUp 1s 0.6s ease both;
+  }
+  .hero-scroll .scroll-line {
+    width: 1px; height: 40px; background: linear-gradient(to bottom, var(--tan), transparent);
+    animation: scrollPulse 2s ease-in-out infinite;
+  }
+  /* ─── SECTIONS ─── */
+  section { padding: 100px 60px; }
+  .section-label {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-size: 11px; font-weight: 700; letter-spacing: 2.5px;
+    text-transform: uppercase; color: var(--sage);
+    margin-bottom: 20px;
+  }
+  .section-label::before {
+    content: ''; display: block;
+    width: 28px; height: 1px; background: var(--sage);
+  }
+  h2.section-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(32px, 4vw, 52px);
+    font-weight: 700; line-height: 1.2;
+    letter-spacing: -1.5px; color: var(--charcoal);
+    margin-bottom: 20px;
+  }
+  .section-desc {
+    font-size: 17px; font-weight: 300; color: var(--mid); line-height: 1.7;
+    max-width: 540px;
+  }
+  /* ─── ABOUT ─── */
+  .about { background: var(--cream); }
+  .about-grid {
+    max-width: 1200px; margin: 0 auto;
+  }
+  .about-content {
+    display: flex; flex-direction: column; align-items: center; text-align: center;
+  }
+  .about-pillars {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;
+    margin-top: 56px; width: 100%;
+  }
+  .pillar {
+    padding: 28px 24px; border-radius: var(--radius);
+    background: var(--warm-white); border: 1px solid var(--border);
+    transition: transform .3s, box-shadow .3s;
+  }
+  .pillar:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+  .pillar-icon {
+    width: 44px; height: 44px; border-radius: 12px;
+    background: rgba(107,140,107,0.1); display: grid; place-items: center;
+    margin-bottom: 16px;
+  }
+  .pillar-icon svg { width: 22px; height: 22px; color: var(--sage-dark); }
+  .pillar h4 { font-size: 15px; font-weight: 600; color: var(--charcoal); margin-bottom: 6px; }
+  .pillar p { font-size: 13px; color: var(--mid); line-height: 1.6; }
+  
+  /* ─── CONTACT SECTION ─── */
+  .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 80px auto 0; /* Space from the text content above */
+  }
+  .contact-card {
+    padding: 32px; border-radius: 24px;
+    background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.1);
+    backdrop-filter: blur(12px);
+    display: flex; align-items: flex-start; gap: 20px;
+    transition: all 0.4s ease;
+    height: 100%;
+  }
+  .contact-card:hover { transform: translateY(-5px); background: rgba(255,255,255,0.12); border-color: rgba(255,255,255,0.2); }
+  .contact-icon {
+    width: 48px; height: 48px; border-radius: 12px;
+    background: #fff; color: var(--sage-dark);
+    display: grid; place-items: center; flex-shrink: 0;
+    margin-top: 2px; /* Small nudge to align with the first line of text */
+  }
+  .contact-icon svg { width: 22px; height: 22px; }
+  .contact-info { flex: 1; text-align: left; }
+  .contact-info span {
+    display: block; font-size: 10px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 1.5px; color: rgba(255,255,255,0.5); margin-bottom: 8px;
+  }
+  .contact-info a, .contact-info p {
+    font-size: 15px; font-weight: 600; color: #fff; text-decoration: none;
+    line-height: 1.5;
+  }
+  .contact-info a:hover { color: var(--tan); text-decoration: underline; }
+
+  @media (max-width: 900px) {
+    .contact-grid { grid-template-columns: 1fr; }
+    .contact-card { padding: 40px 24px; }
+  }
+  .about-visual {
+    position: relative; border-radius: 24px; overflow: hidden;
+    aspect-ratio: 4/5;
+    background: linear-gradient(135deg, #c8dbc8 0%, #8fae8f 40%, #6b8c6b 100%);
+    display: grid; place-items: center;
+  }
+  .about-visual-inner {
+    text-align: center; color: rgba(255,255,255,0.9);
+    padding: 40px;
+  }
+  .about-visual-inner svg { width: 80px; height: 80px; opacity: 0.6; margin-bottom: 20px; }
+  .about-visual-inner p { font-size: 18px; font-weight: 500; opacity: 0.8; }
+  .stat-row {
+    display: flex; gap: 64px; margin-top: 64px; flex-wrap: wrap; justify-content: center;
+  }
+  .stat { display: flex; flex-direction: column; }
+  .stat-num {
+    font-family: 'Outfit', sans-serif;
+    font-size: 42px; font-weight: 700; color: var(--sage-dark);
+    letter-spacing: -2px; line-height: 1;
+  }
+  .stat-label { font-size: 12px; color: var(--light-text); font-weight: 500; letter-spacing: 0.5px; margin-top: 4px; }
+  /* ─── SERVICES ─── */
+  .services { background: var(--warm-white); }
+  .services-wrap { max-width: 1200px; margin: 0 auto; }
+  .services-header { margin-bottom: 64px; }
+  .services-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 28px; }
+  .service-card {
+    padding: 44px 40px; border-radius: 24px;
+    background: var(--cream); border: 1px solid var(--border);
+    transition: transform .35s cubic-bezier(.22,1,.36,1), box-shadow .35s;
+    position: relative; overflow: hidden;
+  }
+  .service-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    background: linear-gradient(90deg, var(--sage) 0%, var(--tan) 100%);
+    transform: scaleX(0); transform-origin: left;
+    transition: transform .4s ease;
+  }
+  .service-card:hover::before { transform: scaleX(1); }
+  .service-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+  .service-icon {
+    width: 56px; height: 56px; border-radius: 16px;
+    background: rgba(107,140,107,0.12); display: grid; place-items: center;
+    margin-bottom: 24px;
+  }
+  .service-icon svg { width: 28px; height: 28px; color: var(--sage-dark); }
+  .service-card h3 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 24px; font-weight: 700; color: var(--charcoal);
+    margin-bottom: 10px; letter-spacing: -0.5px;
+  }
+  .service-intro { font-size: 14px; color: var(--mid); line-height: 1.7; margin-bottom: 28px; }
+  .how-it-works { border-top: 1px solid var(--border); padding-top: 24px; }
+  .how-title {
+    font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--sage); margin-bottom: 14px;
+  }
+  .steps { display: flex; flex-direction: column; gap: 10px; }
+  .step {
+    display: flex; gap: 12px; align-items: flex-start;
+  }
+  .step-dot {
+    width: 24px; height: 24px; border-radius: 50%;
+    background: rgba(107,140,107,0.1);
+    display: grid; place-items: center; flex-shrink: 0; margin-top: 1px;
+    font-size: 10px; font-weight: 700; color: var(--sage-dark);
+  }
+  .step p { font-size: 13px; color: var(--mid); line-height: 1.6; }
+  /* ─── DEMO / GALLERY ─── */
+  .demo { background: var(--charcoal); color: var(--cream); }
+  .demo .section-label { color: var(--tan); }
+  .demo .section-label::before { background: var(--tan); }
+  .demo h2.section-title { color: var(--warm-white); }
+  .demo .section-desc { color: rgba(247,243,238,0.6); }
+  .demo-wrap { max-width: 1200px; margin: 0 auto; }
+  .demo-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 56px; flex-wrap: wrap; gap: 24px; }
+  .demo-header-left { flex: 1; }
+  .add-row-btn {
+    width: 32px; height: 32px; border-radius: 50%;
+    background: rgba(107,140,107,0.15); border: 1px solid rgba(107,140,107,0.25);
+    color: var(--sage-light); display: grid; place-items: center;
+    cursor: pointer; transition: all 0.25s cubic-bezier(.22,1,.36,1);
+    margin-left: 12px; flex-shrink: 0;
+  }
+  .add-row-btn:hover {
+    background: var(--sage); color: #fff; transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(107,140,107,0.3);
+  }
+  #fileInput { display: none; }
+  .gallery-section { margin-bottom: 56px; }
+  .gallery-section-title {
+    font-size: 12px; font-weight: 700; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--tan);
+    margin-bottom: 24px; display: flex; align-items: center; gap: 12px;
+  }
+  .gallery-section-title::after {
+    content: ''; flex: 1; height: 1px; background: rgba(201,185,154,0.2);
+  }
+  .gallery-section { margin-bottom: 48px; }
+  .gallery-grid {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    padding: 4px 4px 20px 4px;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
+    scrollbar-color: var(--sage) transparent;
+  }
+  .gallery-grid::-webkit-scrollbar { height: 4px; }
+  .gallery-grid::-webkit-scrollbar-track { background: transparent; }
+  .gallery-grid::-webkit-scrollbar-thumb { background: rgba(107,140,107,0.3); border-radius: 10px; }
+  
+  .gallery-item {
+    flex-shrink: 0;
+    scroll-snap-align: start;
+    position: relative; border-radius: var(--radius); overflow: hidden;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    cursor: pointer;
+    transition: transform .4s cubic-bezier(.22,1,.36,1), box-shadow .4s;
+  }
+  /* Adjusted Sizes */
+  .gallery-item.v-video { width: 240px; aspect-ratio: 9/16; }
+  .gallery-item.h-video { width: 400px; aspect-ratio: 16/9; }
+  .gallery-item.image-item { width: 280px; aspect-ratio: 4/5; }
+
+  .gallery-item:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.4); }
+  .gallery-item video {
+    width: 100%; height: 100%; object-fit: cover; display: block;
+  }
+  .gallery-item img {
+    width: 100%; height: 100%; object-fit: contain; display: block;
+    background: #1a1a1a; /* Dark background to prevent gaps from feeling 'empty' */
+  }
+  .gallery-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.75) 100%);
+    display: flex; flex-direction: column; justify-content: flex-end;
+    align-items: flex-start; padding: 20px;
+    opacity: 0; transition: opacity .3s;
+  }
+  .gallery-item:hover .gallery-overlay { opacity: 1; }
+  .overlay-btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 8px 18px; border-radius: 100px;
+    background: rgba(255,255,255,0.15); backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.25); color: #fff;
+    font-size: 12px; font-weight: 600;
+  }
+  .overlay-btn svg { width: 14px; height: 14px; }
+  .gallery-item-label {
+    font-size: 11px; color: rgba(255,255,255,0.5); margin-bottom: 8px; letter-spacing: 0.5px;
+  }
+  .empty-state {
+    grid-column: 1/-1;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    padding: 60px 40px; border-radius: var(--radius);
+    border: 2px dashed rgba(255,255,255,0.1);
+    color: rgba(247,243,238,0.3); text-align: center; gap: 12px;
+  }
+  .empty-state svg { width: 40px; height: 40px; opacity: 0.3; }
+  .empty-state p { font-size: 14px; }
+  /* ─── CONTENT STRATEGY ─── */
+  .strategy { background: var(--cream); }
+  .strategy-wrap { max-width: 1200px; margin: 0 auto; }
+  .strategy-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 28px; margin-top: 56px; }
+  .strategy-card {
+    padding: 36px 32px; border-radius: var(--radius);
+    background: var(--warm-white); border: 1px solid var(--border);
+    transition: transform .3s, box-shadow .3s;
+  }
+  .strategy-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+  .strategy-tag {
+    display: inline-block; padding: 4px 12px; border-radius: 100px;
+    background: rgba(107,140,107,0.1); color: var(--sage-dark);
+    font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .strategy-card h4 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 22px; font-weight: 700; color: var(--charcoal);
+    margin-bottom: 12px; letter-spacing: -0.5px;
+  }
+  .strategy-card p { font-size: 13px; color: var(--mid); line-height: 1.7; margin-bottom: 20px; }
+  .strategy-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+  .strategy-list li {
+    display: flex; align-items: flex-start; gap: 8px;
+    font-size: 13px; color: var(--mid); line-height: 1.5;
+  }
+  .strategy-list li svg { width: 14px; height: 14px; color: var(--sage); flex-shrink: 0; margin-top: 2px; }
+  /* ─── WHY ─── */
+  .why { background: var(--warm-white); }
+  .why-wrap { max-width: 1200px; margin: 0 auto; }
+  .why-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 24px; margin-top: 56px; }
+  .why-card {
+    padding: 36px 28px; border-radius: var(--radius);
+    background: var(--cream); border: 1px solid var(--border);
+    text-align: center; transition: transform .3s, box-shadow .3s;
+  }
+  .why-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+  .why-icon {
+    width: 60px; height: 60px; border-radius: 50%;
+    background: rgba(107,140,107,0.1); display: grid; place-items: center;
+    margin: 0 auto 20px;
+  }
+  .why-icon svg { width: 28px; height: 28px; color: var(--sage-dark); }
+  .why-card h4 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 18px; font-weight: 700; color: var(--charcoal);
+    margin-bottom: 10px;
+  }
+  .why-card p { font-size: 13px; color: var(--mid); line-height: 1.6; }
+  /* ─── CTA ─── */
+  .final-cta {
+    background: linear-gradient(135deg, var(--sage-dark) 0%, var(--moss) 60%, #2d4a2d 100%);
+    text-align: center; padding: 120px 60px;
+    position: relative; overflow: hidden;
+  }
+  .final-cta::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.04) 1px, transparent 0);
+    background-size: 32px 32px;
+    pointer-events: none;
+  }
+  .final-cta-inner { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
+  .final-cta h2 {
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(32px, 4.5vw, 56px);
+    font-weight: 700; color: #fff; line-height: 1.15;
+    letter-spacing: -1.5px; margin-bottom: 20px;
+  }
+  .final-cta p {
+    font-size: 18px; color: rgba(255,255,255,0.7);
+    line-height: 1.6; margin-bottom: 44px;
+  }
+  .final-cta .btn-primary {
+    background: #fff; color: var(--sage-dark);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+    font-size: 16px; padding: 18px 44px;
+  }
+  .final-cta .btn-primary:hover {
+    background: var(--cream); transform: translateY(-3px);
+    box-shadow: 0 16px 48px rgba(0,0,0,0.25);
+  }
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--charcoal); padding: 40px 60px;
+    display: flex; align-items: center; justify-content: space-between;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    flex-wrap: wrap; gap: 20px;
+  }
+  footer .nav-logo { color: rgba(247,243,238,0.5); }
+  footer p { font-size: 12px; color: rgba(247,243,238,0.3); }
+  /* ─── ANIMATIONS ─── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to   { opacity: 1; transform: scale(1); }
+  }
+  @keyframes scrollPulse {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 1; }
+  }
+  .reveal {
+    opacity: 0; transform: translateY(32px);
+    transition: opacity .7s ease, transform .7s ease;
+  }
+  .reveal.visible { opacity: 1; transform: none; }
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 900px) {
+    nav { padding: 18px 28px; }
+    .nav-links { display: none; }
+    section { padding: 72px 28px; }
+    .hero { padding: 120px 28px 80px; }
+    .about-grid { grid-template-columns: 1fr; }
+    .about-pillars { grid-template-columns: repeat(2, 1fr); }
+    .about-visual { display: none; }
+    .services-grid { grid-template-columns: 1fr; }
+    .strategy-grid { grid-template-columns: 1fr; }
+    .why-grid { grid-template-columns: repeat(2,1fr); }
+    footer { flex-direction: column; text-align: center; padding: 28px; }
+  }
+  @media (max-width: 560px) {
+    .hero h1 { letter-spacing: -1px; }
+    .why-grid { grid-template-columns: 1fr; }
+    .about-pillars { grid-template-columns: 1fr; }
+    .gallery-grid { grid-template-columns: repeat(2,1fr); }
+  }
+
+  /* ─── TOAST ─── */
+  .toast {
+    position: fixed; bottom: 32px; right: 32px; z-index: 999;
+    padding: 14px 24px; border-radius: 12px;
+    background: var(--sage-dark); color: #fff;
+    font-size: 13px; font-weight: 500;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+    transform: translateY(80px); opacity: 0;
+    transition: transform .4s cubic-bezier(.22,1,.36,1), opacity .4s;
+    pointer-events: none;
+  }
+  .toast.show { transform: translateY(0); opacity: 1; }
+
+  /* ─── LIGHTBOX ─── */
+  .lightbox {
+    position: fixed; inset: 0; z-index: 2000;
+    background: rgba(0,0,0,0.85);
+    backdrop-filter: blur(15px);
+    display: none; place-items: center;
+    opacity: 0; transition: opacity 0.4s ease;
+    padding: 40px;
+  }
+  .lightbox.active { display: grid; opacity: 1; }
+  .lightbox-content {
+    max-width: 90vw; max-height: 85vh;
+    position: relative; border-radius: 12px; overflow: hidden;
+    box-shadow: 0 32px 100px rgba(0,0,0,0.8);
+    background: #000;
+  }
+  .lightbox-content video { width: 100%; height: 100%; max-height: 85vh; display: block; }
+  .lightbox-close {
+    position: absolute; top: 20px; right: 20px;
+    width: 44px; height: 44px; border-radius: 50%;
+    background: rgba(255,255,255,0.1); color: #fff;
+    display: grid; place-items: center; cursor: pointer;
+    border: 1px solid rgba(255,255,255,0.2);
+    transition: all 0.3s; z-index: 2001;
+  }
+  .lightbox-close:hover { background: #fff; color: #000; transform: rotate(90deg); }
+  
+  /* Blur background when lightbox active */
+  body.lightbox-open > *:not(.lightbox) {
+    filter: blur(8px);
+    transition: filter 0.4s ease;
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Cube<span>M</span>oons</div>
+</nav>
+
+
+<!-- ─── HERO ─── -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z"/></svg>
+      Crafted for Welly Belly
+    </div>
+    <h1>Building a Premium<br/><em>Digital Presence</em><br/>for Welly Belly</h1>
+    <p class="hero-sub">Content-first strategy powered by AI-driven creative workflows — designed to grow, convert, and inspire.</p>
+    <div class="hero-ctas">
+      <a href="#demo" class="btn-primary">
+        View Our Work
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <a href="#cta" class="btn-outline">
+        Start Collaboration
+      </a>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- ─── ABOUT ─── -->
+<section class="about" id="approach">
+  <div class="about-grid">
+    <div class="about-content">
+      <div class="section-label">Our Approach</div>
+      <h2 class="section-title">Strategy. AI. Design — Together.</h2>
+      <p class="section-desc" style="margin: 0 auto;">We combine brand intelligence, AI-powered creative production, and consistent visual language to position Welly Belly as the authority in healthy, joyful eating — at scale.</p>
+      
+      <div class="about-pillars">
+        <div class="pillar reveal">
+          <div class="pillar-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+          </div>
+          <h4>AI Video Generation</h4>
+          <p>Create cinematic reels and advertisements instantly with cutting-edge AI video models.</p>
+        </div>
+        <div class="pillar reveal">
+          <div class="pillar-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+          </div>
+          <h4>AI Voiceovers</h4>
+          <p>Professional studio-quality voiceovers in any tone or language, perfectly synced to your visuals.</p>
+        </div>
+        <div class="pillar reveal">
+          <div class="pillar-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          </div>
+          <h4>AI Lifestyle Visuals</h4>
+          <p>Generate photorealistic lifestyle and product imagery without ever needing a physical photoshoot.</p>
+        </div>
+        <div class="pillar reveal">
+          <div class="pillar-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+          </div>
+          <h4>AI-Powered Scale</h4>
+          <p>A scalable content system that leverages new tech to produce months of content in days.</p>
+        </div>
+      </div>
+
+      <div class="stat-row reveal">
+        <div class="stat"><div class="stat-num">3×</div><div class="stat-label">Avg. Engagement Lift</div></div>
+        <div class="stat"><div class="stat-num">60%</div><div class="stat-label">Lower Production Cost</div></div>
+        <div class="stat"><div class="stat-num">12+</div><div class="stat-label">Monthly Content Pieces</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── SERVICES ─── -->
+<section class="services" id="services">
+  <div class="services-wrap">
+    <div class="services-header reveal">
+      <div class="section-label">What We Do</div>
+      <h2 class="section-title">Our Service Suite</h2>
+      <p class="section-desc">End-to-end creative production — from ideation to delivery. Built for the modern food brand that wants to grow organically and authentically.</p>
+    </div>
+    <div class="services-grid">
+      <!-- A: Reels -->
+      <div class="service-card reveal">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="4"/><circle cx="12" cy="12" r="3"/><path d="M12 5v2M12 17v2M5 12h2M17 12h2"/></svg>
+        </div>
+        <h3>Reels Creation & Editing</h3>
+        <p class="service-intro">High-retention short-form content crafted to stop the scroll, communicate value, and drive action — purpose-built for Instagram & YouTube Shorts.</p>
+        <div class="how-it-works">
+          <div class="how-title">How it works</div>
+          <div class="steps">
+            <div class="step"><div class="step-dot">1</div><p><strong>Planning:</strong> Hook ideation, script frameworks, and content type mapping (product / recipe / health tip)</p></div>
+            <div class="step"><div class="step-dot">2</div><p><strong>Execution:</strong> Motion graphics, pacing edits, auto-captions, royalty-free music sync</p></div>
+            <div class="step"><div class="step-dot">3</div><p><strong>Deliver:</strong> Platform-optimized exports with A/B variants for testing</p></div>
+          </div>
+        </div>
+      </div>
+      <!-- B: AI Visuals -->
+      <div class="service-card reveal">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 16V8a2 2 0 00-1-1.73L13 2.27a2 2 0 00-2 0L4 6.27A2 2 0 003 8v8a2 2 0 001 1.73L11 21.73a2 2 0 002 0l7-3.27A2 2 0 0021 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+        </div>
+        <h3>AI-Generated Visuals</h3>
+        <p class="service-intro">Photorealistic lifestyle scenes, product mockups, and brand-consistent imagery — generated on demand, without expensive shoots.</p>
+        <div class="how-it-works">
+          <div class="how-title">How it works</div>
+          <div class="steps">
+            <div class="step"><div class="step-dot">1</div><p><strong>Brief:</strong> Scene direction, mood boards, and brand palette locked before generation</p></div>
+            <div class="step"><div class="step-dot">2</div><p><strong>Generate:</strong> AI pipeline produces 10+ variants per brief with brand overlays</p></div>
+            <div class="step"><div class="step-dot">3</div><p><strong>Refine:</strong> Selected images retouched and packaged for multi-format use</p></div>
+          </div>
+        </div>
+      </div>
+      <!-- C: Statics -->
+      <div class="service-card reveal">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+        </div>
+        <h3>Static Creatives</h3>
+        <p class="service-intro">Feed posts, carousels, and stories designed with precision — each layout engineered to halt the scroll and communicate clearly in under 3 seconds.</p>
+        <div class="how-it-works">
+          <div class="how-title">How it works</div>
+          <div class="steps">
+            <div class="step"><div class="step-dot">1</div><p><strong>Calendar:</strong> Monthly content plan aligned to themes, launches, and seasons</p></div>
+            <div class="step"><div class="step-dot">2</div><p><strong>Design:</strong> Grid-consistent templates adapted per content type</p></div>
+            <div class="step"><div class="step-dot">3</div><p><strong>Deliver:</strong> All formats — square, portrait, story — export-ready</p></div>
+          </div>
+        </div>
+      </div>
+      <!-- D: Video -->
+      <div class="service-card reveal">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+        </div>
+        <h3>AI Video & Voiceover</h3>
+        <p class="service-intro">High-end brand films and advertisements powered by AI video generation and natural voice cloning — delivering cinematic polish at record speeds.</p>
+        <div class="how-it-works">
+          <div class="how-title">How it works</div>
+          <div class="steps">
+            <div class="step"><div class="step-dot">1</div><p><strong>Curation:</strong> AI-assisted scriptwriting and custom voice profile selection for your brand</p></div>
+            <div class="step"><div class="step-dot">2</div><p><strong>Generate:</strong> High-fidelity video generation and AI voiceover synthesis with perfect sync</p></div>
+            <div class="step"><div class="step-dot">3</div><p><strong>Deliver:</strong> Cinematic final cuts optimized for ads, social, and web presence</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── DEMO WORK ─── -->
+<section class="demo" id="demo">
+  <div class="demo-wrap">
+    <div class="demo-header reveal">
+      <div class="demo-header-left">
+        <div class="section-label">What We Created</div>
+        <h2 class="section-title">Our Featured Work</h2>
+        <p class="section-desc">Experience the high-fidelity visual systems and AI-powered creatives I've developed specifically for modern brands.</p>
+      </div>
+      <input type="file" id="fileInput" accept="video/mp4,video/webm,image/jpeg,image/png,image/gif,image/webp" multiple/>
+    </div>
+
+    <!-- Landscape Videos -->
+    <div class="gallery-section">
+      <div class="gallery-section-title">
+        Landscape Videos 
+        <div class="add-row-btn" onclick="triggerRowUpload('hVideoGrid')">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" width="14" height="14"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </div>
+      </div>
+      <div class="gallery-grid" id="hVideoGrid">
+        <div class="empty-state" id="hVideoEmpty">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+          <p>No landscape videos yet</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Vertical Reels -->
+    <div class="gallery-section">
+      <div class="gallery-section-title">
+        Reels &amp; Vertical
+        <div class="add-row-btn" onclick="triggerRowUpload('vVideoGrid')">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" width="14" height="14"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </div>
+      </div>
+      <div class="gallery-grid" id="vVideoGrid">
+        <div class="empty-state" id="vVideoEmpty">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="7" y="2" width="10" height="20" rx="2"/><line x1="12" y1="18" x2="12" y2="18"/></svg>
+          <p>No vertical reels yet</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Image Posts -->
+    <div class="gallery-section">
+      <div class="gallery-section-title">
+        Image Creatives
+        <div class="add-row-btn" onclick="triggerRowUpload('imageGrid')">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" width="14" height="14"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </div>
+      </div>
+      <div class="gallery-grid" id="imageGrid">
+        <div class="empty-state" id="imageEmpty">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          <p>No posts yet</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  </div>
+</section>
+
+<!-- ─── FINAL CTA ─── -->
+<section class="final-cta" id="cta">
+  <div class="final-cta-inner reveal">
+    <div class="section-label" style="justify-content:center; color:rgba(255,255,255,0.7); margin-bottom:24px;">Next Steps</div>
+    <h2>Let's Redefine the Standard Together</h2>
+    <p>This isn't just about content; it's about building a digital legacy for Welly Belly. Let's combine our high-fidelity systems with your vision to craft something truly exceptional.</p>
+    
+    <button class="btn-primary" onclick="showToast()" style="background:#fff; color:var(--sage-dark);">
+      Start Collaboration
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="18" height="18"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </button>
+  </div>
+
+  <div class="contact-grid reveal">
+    <div class="contact-card">
+      <div class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+      <div class="contact-info">
+        <span>Email Us</span>
+        <a href="mailto:support@cubemoons.com">support@cubemoons.com</a>
+      </div>
+    </div>
+    <div class="contact-card">
+      <div class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+      <div class="contact-info">
+        <span>Call Us</span>
+        <a href="tel:+919039034412">+91 90390 34412</a>
+      </div>
+    </div>
+    <div class="contact-card">
+      <div class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+      <div class="contact-info">
+        <span>Our Studio</span>
+        <p>4th Floor, MR DIY Bldg, Samta Colony, Raipur</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="nav-logo">Cube<span>M</span>oons</div>
+  <p>© 2025 Creative Proposal — Powered by Cubemoons</p>
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="mediaLightbox">
+  <div class="lightbox-close" onclick="closeLightbox()">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="20" height="20"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+  </div>
+  <div class="lightbox-content">
+    <video id="lightboxVideo" controls autoplay style="display:none;"></video>
+    <img id="lightboxImage" style="display:none; max-width:100%; max-height:85vh; object-fit:contain; border-radius:8px;">
+  </div>
+</div>
+
+<div class="toast" id="toast">🌿 Collaboration request noted — we'll be in touch!</div>
+
+<script>
+// ─── GALLERY MANAGEMENT ───────────────────────────────────────────────────
+const STORAGE_KEY = 'wb_demo_gallery_v2';
+
+function loadGallery() {
+  try {
+    return JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+  } catch { return []; }
+}
+
+function saveGallery(items) {
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
+  } catch (e) {
+    console.warn('localStorage full:', e);
+  }
+}
+
+function getGallery() {
+  return loadGallery();
+}
+
+function addToGallery(item) {
+  const items = loadGallery();
+  items.push(item);
+  saveGallery(items);
+}
+
+// ─── RENDER ITEM ─────────────────────────────────────────────────────────
+function renderItem(item, animate = false) {
+  let gridId = '';
+  let emptyId = '';
+  
+  if (item.forcedTarget) {
+    gridId = item.forcedTarget;
+    emptyId = gridId.replace('Grid', 'Empty');
+  } else if (item.type === 'video') {
+    if (item.aspect === 'horizontal') {
+      gridId = 'hVideoGrid'; emptyId = 'hVideoEmpty';
+    } else {
+      gridId = 'vVideoGrid'; emptyId = 'vVideoEmpty';
+    }
+  } else {
+    gridId = 'imageGrid'; emptyId = 'imageEmpty';
+  }
+
+  const grid = document.getElementById(gridId);
+  const emptyEl = document.getElementById(emptyId);
+  if (emptyEl) emptyEl.remove();
+
+  const div = document.createElement('div');
+  let ratioClass = '';
+  if (item.type === 'video') {
+    ratioClass = item.aspect === 'horizontal' ? 'h-video' : 'v-video';
+  } else {
+    ratioClass = 'image-item';
+  }
+  
+  div.className = `gallery-item ${ratioClass}`;
+  if (animate) div.style.animationDelay = '0s';
+
+  if (item.type === 'video') {
+    div.innerHTML = `
+      <video src="${item.src}" muted loop preload="metadata" playsinline></video>
+      <div class="gallery-overlay" onclick="openLightbox('${item.src}', 'video')">
+        <div class="gallery-item-label">${item.name}</div>
+        <div class="overlay-btn">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          Play Video
+        </div>
+      </div>`;
+    // Hover play/pause
+    const video = div.querySelector('video');
+    div.addEventListener('mouseenter', () => video.play());
+    div.addEventListener('mouseleave', () => { video.pause(); video.currentTime = 0; });
+  } else {
+    div.innerHTML = `
+      <img src="${item.src}" alt="${item.name}" loading="lazy"/>
+      <div class="gallery-overlay" onclick="openLightbox('${item.src}', 'image')">
+        <div class="gallery-item-label">${item.name}</div>
+        <div class="overlay-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="14" height="14"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          View Post
+        </div>
+      </div>`;
+  }
+
+  grid.appendChild(div);
+}
+
+// ─── INIT FROM LOCALSTORAGE ───────────────────────────────────────────────
+function initGallery() {
+  const items = loadGallery();
+  items.forEach(item => renderItem(item, false));
+}
+
+// ─── FILE INPUT HANDLER ───────────────────────────────────────────────────
+let activeRowTarget = null;
+
+function triggerRowUpload(gridId) {
+  activeRowTarget = gridId;
+  document.getElementById('fileInput').click();
+}
+
+document.getElementById('fileInput').addEventListener('change', function(e) {
+  const files = Array.from(e.target.files);
+  if (!files.length) return;
+
+  files.forEach(file => {
+    const isVideo = file.type.startsWith('video/');
+    const isImage = file.type.startsWith('image/');
+    if (!isVideo && !isImage) return;
+
+    const reader = new FileReader();
+    reader.onload = function(ev) {
+      const src = ev.target.result;
+      
+      if (isVideo) {
+        const tempVideo = document.createElement('video');
+        tempVideo.src = src;
+        tempVideo.onloadedmetadata = function() {
+          const aspect = tempVideo.videoWidth / tempVideo.videoHeight;
+          const item = {
+            id: Date.now() + Math.random(),
+            type: 'video',
+            name: file.name.replace(/\.[^/.]+$/, ''),
+            src: src,
+            aspect: aspect > 1.1 ? 'horizontal' : 'vertical',
+            // Use activeRowTarget if it was set, otherwise auto-sort
+            forcedTarget: activeRowTarget,
+            addedAt: new Date().toISOString()
+          };
+          addToGallery(item);
+          renderItem(item, true);
+          showToast('Video added ✓');
+          activeRowTarget = null; // reset
+        };
+      } else {
+        const item = {
+          id: Date.now() + Math.random(),
+          type: 'image',
+          name: file.name.replace(/\.[^/.]+$/, ''),
+          src: src,
+          forcedTarget: activeRowTarget,
+          addedAt: new Date().toISOString()
+        };
+        addToGallery(item);
+        renderItem(item, true);
+        showToast('Creative added ✓');
+        activeRowTarget = null; // reset
+      }
+    };
+    reader.readAsDataURL(file);
+  });
+
+  this.value = '';
+});
+
+// ─── LIGHTBOX LOGIC ───────────────────────────────────────────────────────
+function openLightbox(src, type) {
+  const lb = document.getElementById('mediaLightbox');
+  const v = document.getElementById('lightboxVideo');
+  const img = document.getElementById('lightboxImage');
+  
+  // Reset
+  v.style.display = 'none';
+  img.style.display = 'none';
+  v.pause();
+  v.src = '';
+  img.src = '';
+
+  if (type === 'video') {
+    v.src = src;
+    v.style.display = 'block';
+  } else {
+    img.src = src;
+    img.style.display = 'block';
+  }
+  
+  lb.classList.add('active');
+  document.body.classList.add('lightbox-open');
+}
+
+function closeLightbox() {
+  const lb = document.getElementById('mediaLightbox');
+  const v = document.getElementById('lightboxVideo');
+  const img = document.getElementById('lightboxImage');
+  
+  v.pause();
+  v.src = '';
+  img.src = '';
+  
+  lb.classList.remove('active');
+  document.body.classList.remove('lightbox-open');
+}
+
+// Close on escape
+window.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeLightbox();
+});
+
+// ─── TOAST ───────────────────────────────────────────────────────────────
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  if (msg) t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 3200);
+}
+
+// ─── SCROLL REVEAL ───────────────────────────────────────────────────────
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      entry.target.style.transitionDelay = (i * 0.05) + 's';
+      entry.target.classList.add('visible');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+// ─── INIT ─────────────────────────────────────────────────────────────────
+initGallery();
+</script>
+</body>
+</html>
