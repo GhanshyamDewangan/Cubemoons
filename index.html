@@ -257,16 +257,34 @@
   .btn-pill { display: none; }
 
   .hero-footer-bar {
-    width: calc(100% - 120px);
-    display: flex;
-    justify-content: space-between;
+    width: 100%;
+    padding: 30px 60px;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 🔥 4 equal parts */
+
     align-items: center;
-    padding-top: 30px;
+
     border-top: 1px solid rgba(255,255,255,0.2);
-    margin: 0 60px 40px;
+
     color: rgba(255,255,255,0.8);
-    font-size: 0.85rem;
-    z-index: 2;
+    font-size: 0.9rem;
+  }
+
+  .hero-footer-links {
+    justify-self: start;
+    display: flex;
+    gap: 30px;
+  }
+
+  .hero-footer-email {
+    justify-self: end;
+    text-align: right;
+  }
+
+  /* Optional center space (if needed later) */
+  .hero-footer-center {
+    justify-self: center;
   }
   .hero-footer-links {
     display: flex;
@@ -906,18 +924,17 @@
 
   <div class="hero-bottom">
     <div class="hero-footer-bar">
-      <div class="hero-footer-links">
-        <span>@cube.moons</span>
-        <span>www.cubemoons.com</span>
-        <span>Raipur, Chhattisgarh</span>
-      </div>
-      <div class="hero-footer-arrows">
+      <div>@cube.moons</div>
+      <div>www.cubemoons.com</div>
+      <div>Raipur, Chhattisgarh</div>
+      <div class="hero-footer-email">marketing@cubemoons.com</div>
+      <!-- <div class="hero-footer-arrows">
         <div class="arrow-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></div>
         <div class="arrow-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></div>
-      </div>
-      <div class="hero-footer-email">
+      </div> -->
+      <!-- <div class="hero-footer-email">
         marketing@cubemoons.com
-      </div>
+      </div> -->
     </div>
   </div>
 </section>
